@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/continents', function(req, res, next) {
   res.render('continents', { 
     title: 'Continents',
-    contents: 'Continent: ' + continents[0] });
+    contents: 'Continent: ' + continents.africa +' '+ continents.antarctica +' '+ continents.asia +' '+ continents.europe +' '+ continents.northAmerica +' '+ continents.oceania +' '+ continents.southAmerica });
 });
 
 /* GET about page. */
