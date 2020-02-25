@@ -9,9 +9,14 @@
     <a href="/about">About</a><br>
     <a href="/continents">Continents</a><br>
     <a href="/country">Country</a><br>
+    <a href="/countryData">Add a country</a><br>
     <h1>{title}</h1>
-    {#country}
-      <p>{name}</p>
-    {/country}
+    {#data}
+      <a href="country/{name}"><h2>{name}</h2></a>
+      <p>Continemt: {continent}</p>
+      <p>Area: {area}</p>
+      <p>Population: {population}</p>
+      <p>Goverment Form:{govermentForm}</p>
+    {/data}
   </body>
 </html>

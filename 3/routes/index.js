@@ -23,25 +23,19 @@ router.get('/continents', function(req, res, next) {
 
 /* GET country page. */
 router.get('/country', function(req, res, next) {
-  let country = worldControllers.retrieveCountry(req.params.country);  // get data from
-  console.log(country.length + ":" + typeof country);
-  res.render('country', { 
-    title: 'Country',
-    country
-  });
+  worldControllers.retrieveCountry(req, res, next);  // get data from
 });
+
 router.get("/country/:country", function(req, res, next) {  // route with country name
-  let country = worldControllers.retrieveCountry(req.params.country);  // get data from
-  res.render("country", { 
-    title: 'Country',
-    country: country
-  });
+  worldControllers.retrieveCountryData(req, res, next);  // get data from
 });
+
 router.get("/countryData", function(req, res, next) {       // route to  country form page
   res.render("countryData", {});
 });
 router.post("/countryData", function(req, res, next) {      // route with country data
   worldControllers.insertCountry(req, res);               // handling before
+  
 });
 
 module.exports = router;
