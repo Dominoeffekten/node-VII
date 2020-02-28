@@ -39,24 +39,29 @@ module.exports = {
             });
         });
     },
-    insertCountry(req, res){
-        var url = req.url.substring(9);
-        query = {name: url}
+    insertCountry(req, res, next){
+        query = { name: req.body.name }
         newData = {
-            name: name,
-            continent: continent,
-            population: population,
-            governmenForm: governmenform
+            name: req.body.name,
+            continent: req.body.continent,
+            area: req.body.area,
+            population: req.body.population,
+            governmentForm: req.body.governmentForm
         }
+        console.log(req.body);
 
         mongo.connect(constr, { useNewUrlParser: true, useUnifiedTopology: true}, function (err, cor) {
             if (err) {
                 console.error(err);
                 return;
             }
-            cor.db(dbname).collection('country').updateOne(query, {"$set": newData}, {upset: true}, function(err, collection){
-                if (err) throw err
-                console.log(data);
+            cor.db(dbname).collection('country').updateOne(query, {"$set": newData}, {upset: true}, function(err, data){
+                if (err) {throw err}
+                //console.log(collection);
+                res.render('country', { 
+                    title: 'New country',
+                    data: newData,
+                });
                 
                 
             });

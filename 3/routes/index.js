@@ -35,7 +35,6 @@ router.get("/countryData", function(req, res, next) {       // route to  country
 });
 router.post("/countryData", function(req, res, next) {      // route with country data
   worldControllers.insertCountry(req, res);               // handling before
-  
 });
 
 module.exports = router;

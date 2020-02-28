@@ -14,7 +14,7 @@
     <form action="/countryData" method="POST" id="countryForm">
       <h3>Add new country</h3>
       <label>Country: </label><br>
-        <input type="text" name="country" placeholder="Denmark" required></input><br>
+        <input type="text" name="name" placeholder="Denmark" required></input><br>
       <label>Continent: </label><br>
             <select type="text" name="continent" placeholder="Continent" required>
           <option value="Africa">Africa</option>
@@ -30,7 +30,7 @@
       <label>Population: </label><br>
         <input type="number" name="population" placeholder="5603000"></input><br>
       <label>The gouvernment form: </label><br>
-        <input type="text" name="governmenform" placeholder="Democracy"></input><br>
+        <input type="text" name="governmentForm" placeholder="Democracy"></input><br>
       <button type="submit">OK</button>
     </form>
 
